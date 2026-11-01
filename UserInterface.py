@@ -17,14 +17,10 @@ st.set_page_config(
 
 # FastAPI Configuration
 
-API_URL = os.getenv("API_URL")
-if not API_URL:
-    api_host = os.getenv("API_HOST")
-    API_URL = (
-        f"https://{api_host.rstrip('/')}/predict"
-        if api_host
-        else "http://127.0.0.1:8000/predict"
-    )
+API_URL = os.getenv(
+    "API_URL",
+    "https://mental-health-score-osrl.onrender.com/predict"
+)
 
 
 # Load Custom CSS
