@@ -1,0 +1,231 @@
+/* --------------------------------
+   Main Application
+-------------------------------- */
+
+/* .stApp { */
+    /* background: #f1f5f9; */
+    /* color: #1e293b; */
+/* } */
+
+/* Main content width */
+.block-container {
+    max-width: 1150px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* --------------------------------
+   Hero Section
+-------------------------------- */
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        #123b67,
+        #2563a6,
+        #4985c5
+    );
+    padding: 42px 25px;
+    border-radius: 22px;
+    text-align: center;
+    color: white;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(37, 99, 166, 0.15);
+}
+
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    color: white !important;
+    font-size: 36px;
+    font-weight: 750;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    color: #e4efff;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 720px;
+    margin: 0 auto 20px auto;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* --------------------------------
+   Section Headings
+-------------------------------- */
+
+.section-heading {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 750;
+    color: smokewhite;
+    padding: 15px 0;
+    margin: 15px 0;
+    border-bottom: 2px solid #dce7f3;
+}
+
+/* --------------------------------
+   Input Labels
+-------------------------------- */
+
+.stTextInput label,
+.stNumberInput label,
+.stSelectbox label,
+.stSelectSlider label {
+    color: #7b8ca4 !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+}
+
+/* Text and number inputs */
+.stTextInput input,
+.stNumberInput input {
+    border-radius: 9px;
+    border: 1px solid #cbd5e1;
+    background-color: white;
+    color: #1e293b;
+}
+
+/* Focus state */
+.stTextInput input:focus,
+.stNumberInput input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
+}
+
+/* Dropdowns */
+.stSelectbox [data-baseweb="select"] > div {
+    border-radius: 9px;
+    border-color: #cbd5e1;
+    background-color: white;
+}
+
+/* --------------------------------
+   Prediction Button
+-------------------------------- */
+
+.stFormSubmitButton button {
+    background: linear-gradient(
+        90deg,
+        #1d4ed8,
+        #2563eb
+    );
+    color: white;
+    border: none;
+    border-radius: 11px;
+    min-height: 52px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.stFormSubmitButton button:hover {
+    background: linear-gradient(
+        90deg,
+        #1e40af,
+        #1d4ed8
+    );
+    color: white;
+    border: none;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.2);
+}
+
+/* --------------------------------
+   Prediction Result
+-------------------------------- */
+
+.result-heading {
+    font-size: 26px;
+    font-weight: 750;
+    color: #173b65;
+    margin: 35px 0 18px 0;
+}
+
+.result-card {
+    background: white;
+    border-radius: 18px;
+    border: 1px solid #dce7f3;
+    border-left: 6px solid #2563eb;
+    padding: 30px;
+    margin: 15px 0 25px 0;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    text-align: center;
+}
+
+.result-label {
+    color: #64748b;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.result-card h2 {
+    color: #1d4ed8;
+    font-size: 42px;
+    font-weight: 800;
+    margin: 12px 0;
+}
+
+.result-description {
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+/* --------------------------------
+   Footer
+-------------------------------- */
+
+.footer {
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.8;
+    padding: 30px 10px 10px 10px;
+    margin-top: 35px;
+    border-top: 1px solid #dce7f3;
+}
+
+/* --------------------------------
+   Mobile Responsiveness
+-------------------------------- */
+
+@media (max-width: 768px) {
+    .block-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .hero {
+        padding: 30px 15px;
+    }
+
+    .hero h1 {
+        font-size: 27px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .section-heading {
+        font-size: 19px;
+    }
+
+    .result-card h2 {
+        font-size: 34px;
+    }
+}
