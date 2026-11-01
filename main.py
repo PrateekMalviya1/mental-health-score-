@@ -1,10 +1,13 @@
+from pathlib import Path
+from typing import Literal
+
 import joblib
+import pandas as pd
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
-from typing import Literal
-import pandas as pd
 
-model = joblib.load('Mental_Health_Score_Predictor.pkl')
+MODEL_PATH = Path(__file__).resolve().parent / "Mental_Health_Score_Predictor.pkl"
+model = joblib.load(MODEL_PATH)
 app = FastAPI()
 
 top_countries = ['Other', 'India', 'USA', 'Canada', 'UK', 'Australia', 'Germany', 'France', 'Maxico', 'Turkey']

@@ -17,7 +17,14 @@ st.set_page_config(
 
 # FastAPI Configuration
 
-API_URL = os.getenv('API_URL')
+API_URL = os.getenv("API_URL")
+if not API_URL:
+    api_host = os.getenv("API_HOST")
+    API_URL = (
+        f"https://{api_host.rstrip('/')}/predict"
+        if api_host
+        else "http://127.0.0.1:8000/predict"
+    )
 
 
 # Load Custom CSS
@@ -258,10 +265,9 @@ if submitted:
                     unsafe_allow_html=True
                 )
 
-                # Adjust this key to match your FastAPI response.
                 prediction = result.get(
-                    "mental_health_score",
-                    result.get("prediction")
+                    "predicted_mental_health_score",
+                    result.get("mental_health_score", result.get("prediction"))
                 )
 
                 if prediction is not None:
@@ -285,10 +291,6 @@ if submitted:
                         "The API returned a response, but no "
                         "prediction field was found."
                     )
-                    st.markdown(
-                        f"""<div> Score: {result["predicted_mental_health_score"]} <div> <br>""",
-                        unsafe_allow_html=True)
-                    # st.json(result)
 
                 with st.expander("View submitted information"):
                     st.json(payload)
@@ -308,9 +310,8 @@ if submitted:
 
         except requests.exceptions.ConnectionError:
             st.error(
-                "Cannot connect to FastAPI. "
-                "Make sure your backend is running at "
-                "http://127.0.0.1:8000."
+                "Cannot connect to the prediction API. "
+                "Check API_URL or API_HOST and make sure the backend is running."
             )
 
         except requests.exceptions.Timeout:
